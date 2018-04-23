@@ -1,0 +1,247 @@
+/*manque TrueType, EOT or SVG*/
+@font-face {
+
+	font-family: 'Primitive';
+	src: url('../fonts/primitive.woff');
+	src: url('../fonts/primitive.woff?#iefix')
+
+	format('woff'),
+
+	url('../fonts/primitive.woff')
+
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+html {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 13px;
+}
+body {
+	background-color: #cecece;
+	margin:0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family:'Primitive', Arial, Helvetica, sans-serif;
+	-webkit-transform:scale(1,1.3); /* Safari and Chrome */
+    -moz-transform:scale(1,1.3); /* Firefox */
+    -ms-transform:scale(1,1.3); /* IE 9 */
+    -o-transform:scale(1,1.3); /* Opera */
+    transform:scale(1,1.3); /* W3C */
+	color:#0c0e0b;
+	margin: 0;
+	padding: 0.4em;
+}
+main {
+	margin: auto;
+	background: url('../img/hrognures.png') no-repeat,url('../img/brognures.png') bottom right no-repeat #fafafa;
+	padding: 30px;
+	max-width: 682px;
+	width:100%;
+	min-width:300px;
+	/*min-height: 670px;*/
+}
+
+main>header {
+	text-align: center;
+}
+header .sous-titre {
+	text-transform: uppercase;
+    font-family: Courier New;
+    font-weight: bold;
+}
+
+header hr {
+    border-style: solid;
+	margin: 0.1em; 
+}
+header hr:nth-child(2n+0) {
+    border-width: 2px;
+}
+header hr:nth-child(2n+1) {
+    border-style: solid;
+    border-width: 0.5px;
+}
+
+footer nav {
+	text-align:center;
+}
+
+h1 a {
+	text-decoration: none;
+	color: black;
+}
+
+.cible {
+	/*background-image: url('../img/point.png');*/
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	display: none;
+	margin-left: calc(50% - 50px);
+    text-align: center;
+	user-select: none;
+	cursor: pointer;
+}
+.cible .index {
+	padding: 25px 0;
+	position: relative;
+    top: -25px;
+	pointer-events: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
+	background: none !important;
+}
+.cropped-image {
+    display: inline-block;
+    width: 250px;
+    height: 215px;
+    overflow: hidden;
+    background-size: cover;
+	filter:sepia(100%);
+}
+.point {
+	width: 50px;
+	height: 50px;
+	fill: white;
+}
+.point:hover {
+	fill: grey;
+}
+
+.interface {
+	display:none;
+}
+.start {
+	padding:5px 10px;
+}
+
+.text-align-left {
+	text-align:left;
+}
+
+nav button {
+	
+}
+
+button {
+	box-shadow: 0 0 0 1px hsl(100, 12%, 5%), 0 0 0 3px #fafafa, 0 0 0 4px hsl(100, 12%, 5%);
+    background-color: #fafafa;
+    border-style: unset;
+    margin: 10px 5px;
+    padding: 5px 10px;
+	transition-duration: 0.3s;
+	cursor: pointer;
+}
+
+footer button {
+	border-radius: 25px;
+    height: 50px;
+    width: 50px;
+	vertical-align: middle;
+}
+
+button:hover {
+    background-color: #777777;
+}
+
+a {
+	color: #777777;
+}
+
+.map {
+	background-image: url('../img/carte1871.png');
+	background-position: top center;
+	height:575px;
+	max-width:682px;
+	width:100%;
+}
+#items {
+	position: relative;
+}
+#modal {
+    width: 250px;
+    background-color: #fafafa;
+    height: 565px;
+    position: absolute;
+	z-index: 2;
+	padding: 5px;
+	display: none;
+	margin-left: 422px;
+}
+
+.next-day, .fin-day, .restart {
+	display:none;
+}
+
+.no-items {
+	visibility:hidden;
+}
+button.selected{
+	background-color: #a8aaa4;
+}
+.selected .point {
+	fill: grey;
+}
+
+.pagination-text {
+	width: 110px; 
+	display: inline-block;
+	text-align: right;
+}
+
+.prev[data-page="-1"], 
+.next[data-page="-1"] {
+	background-color: #929292;
+}
+
+.overlay {
+	height:575px;
+	max-width:682px;
+	width:100%;
+    position: absolute;
+	background-color: grey;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.new-day {
+	margin-left:225px !important;
+}
+
+.signature {
+	text-align:center;
+}
+
+@media screen and (max-width: 760px) {
+	main {
+		padding:0;
+	}
+}
+
+@media screen and (max-width: 682px) {
+	#modal {
+		margin-left: calc(100% - 260px);
+	}
+	
+	.new-day {
+		margin-left: calc(50% - 125px) !important;
+	}
+}
+
+
+@media screen and (max-height: 600px) {
+	.map, .overlay {
+		height: 430px;
+	}
+	.signature{
+		display:none;
+	}
+}
+
+@media screen and (max-height: 600px), screen and (max-width: 465px) {
+	.switch-etape button {
+		margin: 10px 2px;
+	}
+}
