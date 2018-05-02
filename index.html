@@ -2,16 +2,12 @@
 <html lang="fr-CA">
 	<head>
 		<!-- 
-			Mettre les textes
-			Mettre des photos 
 			Mettre des sons
-				des bruits de balles
-				changer la toune d'intro pour un loop d'accordéon instru
-			Mettre un texte pour parler du profil des émeutiers (15% anglos)
+			
+			C quoi l'acte d'émeute?
 		-->
 		<meta charset="UTF-8">
-		<meta name="robots" 					content="noindex">
-		<meta name="googlebot" 					content="noindex">
+		
 		<meta name="viewport" 					content="width=device-width, initial-scale=1.0">
 		<meta name="description" 				content="Cette Pâques sanglante est l'une des plus importante crise politique québécoise. La ville de Québec se soulève et l'armée tire sur la foule." />
 		
@@ -19,15 +15,19 @@
 		<meta property="og:type"				content="website" />
 		<meta property="og:title"				content="Québec 1918 : le centenaire des émeutes contre la conscription" />
 		<meta property="og:description"			content="Cette Pâques sanglante est l'une des plus importante crise politique québécoise. La ville de Québec se soulève et l'armée tire sur la foule." />
-		<meta property="og:image"				content="http://www.quebec1918.com/img/quebecprintemps1918.jpg" />
+		<meta property="og:image"				content="http://www.quebec1918.com/img/emeutiers8.jpg" />
 		<meta property="fb:app_id"				content="1902382743113796" />
 
 		<meta name="google-site-verification"	content="_4Pk0QMoT3YFUOSHlKssaCQ6NxdDFAnmFvCMrYqOpnY" />
 
-		<link type="text/css" rel="stylesheet" href="css/main.css?ver=0.0.2" media="all" />
-		<title>Québec 1918 : le centenaire des émeutes contre la conscription</title>
+		<link type="text/css" rel="stylesheet" href="css/main.css?ver=0.0.6" media="all" />
 		
-		<script src="jquery-3.3.1.min.js"></script>
+		<title>Québec 1918 : le centenaire des émeutes contre la conscription</title>
+		
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/jquery.touchSwipe.min.js"></script>
+		<script src="js/lang.js"></script>
+
 		<script>
 			var soundAudio = new Audio();
 			var bgAudio = new Audio();
@@ -47,7 +47,7 @@
             "image": {
               "background-image": "url('img/affiche.jpg')"
             },
-            "texte": "<p>C'est la Première Guerre mondiale depuis 1914 et le Canada rejoint la mêlée.<p></p>Pour regarnir les rangs de l'armée décimés par les affrontements sur les champs de bataille européens, le gouvernement instaure la conscription.</p>",
+            "texte": "<p>Le Canada est en guerre. C'est la Première Guerre mondiale depuis 1914.<p></p>Pour regarnir les rangs de l'armée décimés par les affrontements sur les champs de bataille européens, le gouvernement instaure la conscription.</p>",
             "audio": ""
           }
         },
@@ -57,7 +57,7 @@
             "image": {
               "background-image": "url('img/recruteurs.jpg')"
             },
-            "texte": "<p>Dès 1916 à Québec, des échauffourées ont lieu entre les recruteurs et la population. Celle-ci accuse le gouvernement d'angliciser l'armée et d’y favoriser les officiers canadiens-anglais.</p><p>La colère se répand dans toute la province: des journaux favorables à la conscription sont saccagés, les manifestations se succèdent. La tension atteint son comble alors que la maison du propriétaire du Montreal Star est dynamitée.</p>",
+            "texte": "<p>Dès 1916 à Québec, des échauffourées ont lieu entre les recruteurs et la population. Celle-ci accuse le gouvernement d'angliciser l'armée et d’y favoriser les officiers canadiens-anglais.</p><p>La colère se répand dans toute la province: des journaux favorables à la conscription sont saccagés et les manifestations se succèdent. La tension atteint son comble alors que la maison du propriétaire du Montreal Star est dynamitée.</p>",
             "audio": ""
           }
         },
@@ -74,22 +74,55 @@
         },
         {
           "modal": {
+            "titre": "Qui participe aux émeutes ?",
+            "image": {
+              "background-image": "url('img/birmingham-riot.jpg')"
+            },
+            "texte": "<p>La classe populaire se retrouve en basse-ville. Dans les usines et les chantiers navals, on compte une majorité de francophones et une minorité d'environ 15% d'ouvriers anglophones catholiques. Irlandaise, principalement.</p><p>Ils sont jeunes et sujets à l'enrôlement.</p>",
+            "audio": ""
+          }
+        },
+        {
+          "modal": {
+            "titre": "Le droit de vote... pour certaines femmes",
+            "image": {
+				"backgroundImage":"url('img/femmes.jpg')", 
+				"backgroundPosition":"center"
+			},
+            "texte": "<p>Une élection a lieu en 1917. Afin d'assurer la victoire de la conscription, les conservateurs enlèvent le droit de vote aux objecteurs de conscience et aux citoyens canadiens né dans des pays ennemis et naturalisés après 1902.</p><p>Il accorde aussi le droit de vote aux épouses des militaires. Il s'agit de la première élection fédérale où certaines femmes peuvent voter.</p>",
+            "audio": ""
+          }
+        },
+        {
+          "modal": {
+            "titre": "Une élection qui divise",
+            "image": {
+              "background-image": "url('img/election1917.jpg')",
+			  "filter": "none"
+            },
+            "texte": "<p>Le gouvernement conservateur souhaite former une coalition avec le parti libéral mais ceux-ci refusent à cause de la conscription.</p><p>Les libéraux remportent 82 sièges, dont 62 au Québec, le parti conservateur n'en conservant que 3.</p><p>Le pays est divisé au point qu'un député libéral de l’Assemblée législative dépose une motion pour que la province de Québec quitte la Confédération canadienne. Mais elle est rapidement retirée.</p>",
+            "audio": ""
+          }
+        },
+		{
+          "modal": {
             "titre": "À bas l'impérialisme",
             "image": {
               "background-image": "url('img/revolution.jpg')"
             },
-            "texte": "<p>Le contexte international est favorable à l'anti-impérialisme.</p><p>C'est la révolution mexicaine mais surtout, la Russie vient de capituler, conséquence de la révolution bolchevique. Et il n’est pas question d’importer ce modèle au Canada.</p><p>Des mutineries dans l'armée française font craindre le pire.</p>",
-            "audio": ""
+            "texte": "<p>Le contexte international est favorable à l'anti-impérialisme.</p><p>C'est la révolution mexicaine mais surtout, la Russie vient de capituler suite à la révolution bolchevique. Des mutineries dans l'armée française font craindre le pire.</p><p>L'Irlande est aussi secoué par un fort mouvement indépendantiste.</p>",
+            "audio": "audio/internationale.mp3"
           }
         }
       ]
     },
     {
-      "audio": "audio/calmriot.mp3",
+      "audio": "audio/calmriot1.mp3",
       "in": [
         {
           "modal": {
             "titre": "Ne manque qu'une étincelle",
+			"audio": "audio/quilles.mp3",
             "image": {
 				"backgroundImage":"url('img/pjc1920.jpg')"
 			},
@@ -121,11 +154,12 @@
           },
           "modal": {
             "titre": "Rien ne va plus",
+			"audio": "audio/riotglass.mp3",
             "image": {
 				"backgroundImage":"url('img/postedepolice.jpg')", 
 				"backgroundPosition":"center"
 			},
-            "texte": "<p>Mercier est conduit au poste de police mais la situation dégénère. 3000 personnes assiègent le poste de police. Les morceaux de glace se mettent à pleuvoir sur la façade.</p><p>Rien ne va plus</p>"
+            "texte": "<p>Mercier est conduit au poste de police mais la situation dégénère alors que 3000 personnes assiègent l'édifice. Les morceaux de glace se mettent à pleuvoir sur la façade.</p><p>Rien ne va plus.</p>"
           }
         },
         {
@@ -141,13 +175,13 @@
 				"backgroundSize":"165%",
 				"backgroundPosition":"right"
 			},
-            "texte": "<p>Profitant de l'intervention du maire, des agents recruteurs prennent la poudre d’escampette. Quelques-uns se réfugient dans l’immeuble des Frères des Écoles Chrétiennes qui est aussitôt caillassé.</p><p>L’un des agents est reconnu dans un tramway. Son wagon est renversé.</p>"
+            "texte": "<p>Profitant de l'intervention du maire, des agents recruteurs prennent la poudre d’escampette. Quelques-uns se réfugient dans un mmeuble voisin qui est aussitôt caillassé.</p><p>L’un des agents est reconnu dans un tramway. Son wagon est renversé.</p>"
           }
         }
       ]
     },
     {
-      "audio": "audio/calmriot.mp3",
+      "audio": "audio/mediumriot2.mp3",
       "in": [
         {
           "modal": {
@@ -157,8 +191,7 @@
 				"backgroundPosition":"center"
             },
             "texte": "<p>Tout se passe comme si une digue était rompue et que rien ne pouvait plus arrêter la vindicte populaire.</p>"
-          },
-          "audio": "teltoune.mp3"
+          }
         }
       ],
       "items": [
@@ -186,10 +219,11 @@
           },
           "modal": {
             "titre": "Sus à la presse",
+			"audio": "audio/riotglass.mp3",
             "image": {
               "background-image": "url('img/buade.jpg')"
             },
-            "texte": "<p>Les protestataires s'attaquent aux bureaux du Chronicle et de l’Évènement, rue Buade à la haute-ville. Ils pulvérisent les fenêtres des quotidiens avec des pierres et des morceaux de glace.</p><p>Le Daily Telegraph, le journal ouvrier, est épargné.</p>"
+            "texte": "<p>Les protestataires s'attaquent aux bureaux de deux journaux, rue Buade à la haute-ville. Ils pulvérisent les fenêtres des quotidiens pro-conscription avec des pierres et des morceaux de glace.</p><p>Le Daily Telegraph, le journal ouvrier, est épargné.</p>"
           }
         },
         {
@@ -203,13 +237,13 @@
             "image": {
               "background-image": "url('img/auditorium.jpg')"
             },
-            "texte": "<p>Les émeutiers défoncent la porte. Deux gendarmes sont assommés. Les bureaux sont pillés et la paperasse est défenestrée.</p><p>Un feu est déclenché. Les boyaux des pompiers, accourus sur place pour éteindre le feu, sont sabotés.</p>"
+            "texte": "<p>Les émeutiers défoncent la porte de l'Auditorium, l'endroit où se trouve les dossiers des conscrits. Deux gendarmes sont assommés. Les bureaux sont pillés et la paperasse est défenestrée.</p><p>Un feu est déclenché. Les boyaux des pompiers, accourus sur place pour éteindre le feu, sont sabotés.</p>"
           }
         }
       ]
     },
     {
-      "audio": "audio/heavyriot.mp3",
+      "audio": "audio/riotboos3.mp3",
       "in": [
         {
           "modal": {
@@ -235,7 +269,7 @@
               "background-image": "url('img/manege.jpg')",
 			  "backgroundPosition":"center"
             },
-            "texte": "<p>À 21h, jeunes hommes, femmes et enfants se retrouvent face au manège militaire. Ils souhaitent libérer les conscrits qui s’y trouvent.</p><p>Face à eux, des cavaliers et des soldats à pied. Tout se déroule calmement. Malgré tout, un officier francophone lit l’Acte d’émeute.</p>"
+            "texte": "<p>À 21h, jeunes hommes, femmes et enfants se retrouvent face au manège militaire. Ils souhaitent libérer les conscrits qui s’y trouvent.</p><p>Face à eux, des cavaliers et des soldats à pied. Tout se déroule calmement. Malgré tout, un officier francophone lit l’Acte d’émeute, ordonnant aux protestataires de se disperser.</p>"
           }
         },
         {
@@ -246,6 +280,7 @@
           },
           "modal": {
             "titre": "Rue Saint-Jean",
+ 			"audio":"audio/cavalerie.mp3",
             "image": {
               "background-image": "url('img/cavalerie.jpg')"
             },
@@ -255,17 +290,17 @@
       ]
     },
     {
-      "audio": "audio/heavyriot.mp3",
+      "audio": "audio/heavyriot4.mp3",
       "in": [
         {
           "modal": {
             "titre": "Délivrez-nous du mal",
+			"audio": "audio/cloches.mp3",
             "image": {
               "background-image": "url('img/eglisesr.jpg')"
             },
             "texte": "<p>Les églises sont pleines pour la messe de Pâques du dimanche. Une lettre du cardinal, condamnant les troubles, y est récitée.</p><p>Contrairement à la consigne, plusieurs curés préfèrent dénoncer les agissements des troupes fédérales.</p>"
-          },
-          "audio": "teltoune.mp3"
+          }
         }
       ],
       "items": [
@@ -277,11 +312,12 @@
           },
           "modal": {
             "titre": "À la recherche de fusils",
+			"audio": "audio/gunshot.mp3",
             "image": {
 				"background-image": "url('img/proclamation.jpg')",
 				"backgroundPosition":"center"
             },
-            "texte": "<p>La rumeur court que la population cherche des armes. Le général Landry envoie la troupe pour confisquer celles se trouvant chez le quincailler Hermann Young, dans Saint-Roch.</p><p>L’opération tourne mal. 2000 à 3000 émeutiers accueillent les soldats avec des pierres, des briques et des morceaux de glace. Les militaires ouvrent le feu et 3 personnes sont blessées.</p>"
+            "texte": "<p>La rumeur court que la population cherche des armes. Le général Landry envoie la troupe pour confisquer celles se trouvant chez un quincailler, dans Saint-Roch.</p><p>L’opération tourne mal. 2000 à 3000 émeutiers accueillent les soldats avec des pierres, des briques et des morceaux de glace. Les militaires ouvrent le feu et 3 personnes sont blessées.</p>"
           }
         },
         {
@@ -292,10 +328,11 @@
           },
           "modal": {
             "titre": "Des renforts arrivent",
+ 			"audio": "audio/snare1.mp3",
             "image": {
               "background-image": "url('img/lessard.jpg')"
             },
-            "texte": "<p>À 17h, le militaire francophone le plus haut gradé du Canada, François-Louis Lessard, arrive d’Ottawa avec comme mission de “réprimer les troubles”.</p>"
+            "texte": "<p>À 17h, le militaire francophone le plus haut gradé du Canada, François-Louis Lessard, arrive d’Ottawa avec comme mission de “réprimer les troubles”.</p><p>Lessard est né à Québec. Il possède une impressionnante feuille de route en termes de répression de troubles civils.</p>"
           }
         },
         {
@@ -315,8 +352,8 @@
         {
           "class": "cible pjc",
           "pos": {
-            "top": "272px",
-            "left": "-100px"
+            "top": "210px",
+            "left": "-90px"
           },
           "modal": {
             "titre": "Lavergne prononce un discours",
@@ -324,32 +361,33 @@
 				"backgroundImage":"url('img/postedepolice.jpg')", 
 				"backgroundPosition":"center"
 			},
-            "texte": "<p>4000 à 5000 personnes se rassemblent à Saint-Roch entre les rues du Pont et de la Couronne.</p><p>Armand Lavergne monte à l’étage du poste de police pour un grand discours.</p>"
+            "texte": "<p>4000 à 5000 personnes se rassemblent à Saint-Roch. Armand Lavergne monte à l’étage du poste de police pour un grand discours affirmant :</p><p>“Je vous demande votre parole d’honneur de vous disperser, d’être paisibles, de vous fier à l’honneur du gouvernement que je représente.”</p>"
           }
         }
       ]
     },
     {
-      "audio": "audio/heavyriot.mp3",
+      "audio": "audio/riotwithgunfire5.mp3",
+	  "effect":"smog",
       "in": [
         {
           "modal": {
             "titre": "L’heure fatale",
             "image": {
-				"backgroundImage":"url('img/22e.jpeg')",
+				"backgroundImage":"url('img/rassemblement.jpg')",
 				"backgroundPosition":"center"
 			},
             "texte": "<p>Contrairement aux termes de l’entente avec Lavergne, les soldats sont plus que jamais présents dans les rues.</p>"
           },
-          "audio": "teltoune.mp3"
+          "audio": "audio/snare2.mp3"
         }
       ],
       "items": [
         {
           "class": "cible pjc",
           "pos": {
-            "top": "272px",
-            "left": "-100px"
+            "top": "210px",
+            "left": "-90px"
           },
           "modal": {
             "titre": "L'emprise se ressert",
@@ -379,10 +417,11 @@
           "class": "cible st-so",
           "pos": {
             "top": "215px",
-            "left": "-100px"
+            "left": "-135px"
           },
           "modal": {
             "titre": "L'armée repousse les émeutiers",
+ 			"audio":"audio/cavalerie.mp3",
             "image": {
 				"backgroundImage":"url('img/repression.jpg')"
 			},
@@ -397,6 +436,7 @@
           },
           "modal": {
             "titre": "L'armée tire sur la foule",
+			"audio":"audio/lewis.mp3",
             "image": {
 				"background-image": "url('img/gun.jpg')",
  				"backgroundPosition":"center"
@@ -464,7 +504,6 @@
 
 			function playSound (son, type) {
 				if (son != "") {
-					console.log ("audio.play=" + son + "=" + type);
 					if (type == "bg") {
 						bgAudio.volume = 0.2;
 						bgAudio.loop = true;
@@ -478,7 +517,6 @@
 							playPromise.then(_ => {
 							  // Automatic playback started!
 							  // Show playing UI.
-							  console.log ("playpromise");
 							})
 							.catch(error => {
 							  // Auto-play was prevented
@@ -490,14 +528,34 @@
 			}
 			
 			function stopSounds () {
-				console.log ("stopSounds");
-				console.log (bgAudio);
 				$(bgAudio).animate({volume: 0}, 2000);
 			}
 
 			$(function() {
-				$("#modal button.quit, .overlay").click (function () {
-					console.log ("#modal button.quit, .overlay click");
+				
+				$("body").swipe( {
+					//Generic swipe handler for all directions
+					swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+						//Si les boutons de navigations sont visibles
+						if ( $("#modal .prev:visible").length > 0) {
+							if (direction == "left")  $("#modal .next").click();
+							if (direction == "right") $("#modal .prev").click();
+						}
+						//Si les boutons de navigation sont activés
+						else if ( !$(".switch-etape button").prop('disabled') ) {
+							if (direction == "left" && 
+								Number($("html").attr("data-day")) < map["etapes"].length-1) {
+								switchDay( Number($("html").attr("data-day")) + 1 );
+							}
+							else if (direction == "right" && 
+								Number($("html").attr("data-day")) > 0) {
+								switchDay ( Number($("html").attr("data-day")) - 1 );
+							}
+						}
+					}
+				});
+				
+				$("#modal button.quit, .overlay, #modal .close-day").click (function () {
 					if ( $(".new-day").length > 0) { //Si c'est une nouvelle journée
 						if ( $(".no-items").length == 0 ) { //Si ya pas d'items
 							$("#modal").fadeOut(1000);
@@ -511,20 +569,17 @@
 				});
 				
 				$(".switch-etape button, .next-day button").click (function () {
-					console.log( "no-etape= " + $(this).data("etape"));
-					stopSounds();
-					$(".switch-etape button").prop('disabled', true);
-					switchEtape( Number($(this).attr("data-etape")) );
+					switchDay (Number($(this).attr("data-etape")));
 				});
 				
 				$("#modal .prev, #modal .next").click (function () {
-					console.log($(this).data("page"));
 					if ( $(this).attr("data-page") != -1 )
 						showModal ( Number($(this).attr("data-page")) );
 				});
 				
 				$(".fin-day").click (function () {
 					$(".interface").slideUp(2000);
+					$(".overlay").slideUp(2000);
 					$("main>header .start").hide();
 					$("main>header .restart").show();
 					$("main>header").delay(2000).slideDown(1000);
@@ -535,9 +590,8 @@
 					$("main>header .start button").click();
 				});
 				
-				function switchEtape (newEtape) {
-					console.log ("switchEtape="+newEtape+ " etape=" + etape);
-					
+				function switchDay (newEtape) {
+					$(".switch-etape button").prop('disabled', true);
 					$(".switch-etape button").removeClass ("selected");
 					$(".switch-etape button[data-etape='" + newEtape+"']").addClass ("selected");
 					
@@ -545,17 +599,22 @@
 					if (etape == -1){
 						etape = newEtape;
 						$("#modal").addClass ("new-day");
+						$("html").attr("data-day", etape);
 						setDay ();
 					}
 					else {
 						etape = newEtape;
 						
-						$("#modal").fadeOut(1000, function () {
-							$("#modal").addClass ("new-day");
-						});
+						$(".smog").hide();
+						stopSounds();
 						
-						//Ptet un animate vers le noir
-						$(".map").fadeOut (1000, removeCibles).fadeIn(1000, setDay);
+						$("#modal").fadeOut(1000);
+						
+						$(".map").fadeOut (1000, function () {
+							$("#modal").addClass ("new-day");
+							$("html").attr("data-day", etape);
+							removeCibles();
+						}).fadeIn(1000, setDay);
 					}
 				}
 				
@@ -570,6 +629,12 @@
 					//Background sound
 					if (map["etapes"][etape]["audio"] != undefined) {
 						playSound (map["etapes"][etape]["audio"], "bg");
+					}
+					
+					//Day effect
+					if (map["etapes"][etape]["effect"] != undefined) {
+						if (map["etapes"][etape]["effect"] == "smog")
+							$(".smog").fadeIn();
 					}
 					
 					showModal(0);
@@ -618,6 +683,7 @@
 					$(".next-day").toggle (fin && !finfin);
 					$(".next-day button").attr("data-etape", etape+1);
 					$(".fin-day").toggle (finfin);
+					$(".close-day").toggle ( conteneur.length == 1 );
 					
 					$("#modal").fadeIn(1000, function () {
 						//Sound effect 
@@ -629,13 +695,11 @@
 				
 				//Selon l'étape 
 				function setCibles () {
-					console.log ("setCibles");
 					$("#modal").removeClass("new-day");
 					
 					//Pour chaque items de l'étape
 					$.each(map["etapes"][etape]["items"], function (index, value) {
 						index = Number(index);
-						console.log(index);
 						
 						$("<div/>")
 							.appendTo(".map #items")
@@ -645,7 +709,7 @@
 							.append("<span class='index'>" + (index+1) + "</span>")
 							.delay(index*1000)
 							.fadeIn(1000, function () {
-								playSound("audio/explosion.mp3", "sa");
+								playSound("audio/shell.mp3", "sa");
 							})
 							.click (function () {
 								showModal (index);
@@ -660,9 +724,23 @@
 					$("main>header").slideUp(1000, function() {
 						$(".interface").slideDown(1000);
 						$(".overlay").slideDown(1000);
-						switchEtape (0);
+						switchDay (0);
 					});
 				});
+				
+				//preload
+				$.each(map["etapes"], function (index1, value1) {
+					if ( value1["in"] != undefined) 
+						var conteneur = value1["in"];
+					else if ( value1["items"] != undefined) 
+						var conteneur = value1["items"];
+					
+					$.each(conteneur, function (index2, value2) {
+						if (value2["modal"]["image"] != undefined)
+							$("<div/>").appendTo("body").css(value2["modal"]["image"]);
+					});
+				});
+				
 			});
 			
 		</script>
@@ -685,12 +763,19 @@
 				<hr>
 				<hr>
 				<div class="start">
-					<p class="text-align-left">Ça fait 100 ans qu'a eu lieu les émeutes de la conscription à Québec. Lors de la Pâques de 1918, 
-					pendant 5 jours, la ville est à feu et à sang: la population se soulève, des journaux sont saccagés 
-					et l'armée tire sur la foule. Il s'agit d'une des plus importante crise politique québécoise.</p>
+					<figure>
+						<a href="#" onclick="$('main>header .start button').click();"><img src="img/scene.jpg" width="100%" alt="Affrontement"></a>
+						<figcaption><a href="http://www.wartinpantois.com">Wartin Pantois</a>, Québec 1918 : le centenaire des émeutes contre la conscription, peintures sur papier marouflé sur mur, Québec, Canada, 2018</figcaption>
+					</figure>
+					<p class="text-align-left" tkey="Ça fait 100 ans qu'a eu lieu les émeutes de la conscription à Québec. Lors de la Pâques de 1918, 
+					pendant 5 jours, la ville est à feu et à sang : la population se soulève, des journaux sont saccagés 
+					et l'armée tire sur la foule. Il s'agit d'une des plus importante crise politique québécoise."></p>
 					<p class="text-align-left">Cet épisode méconnu mérite d'être mis en lumière.</p>
 
-					<p><label>Commencer <button>&gt;</button></label></p>
+					<p><label><button>Commencer &gt;</button></label></p>
+					
+					<h2 class="text-align-left">À venir</h2>
+					<p class="text-align-left">Une <a href="https://www.facebook.com/events/206381930139190/" target="_blank">visite guidée sur le thème des émeutes</a> aura lieu samedi 5 mai, 17h, à la Place D'Youville.</p>
 				</div>
 				<p class="restart"><label>Recommencer <button>&lt;</button></label></p>
 			</header>
@@ -708,12 +793,14 @@
 				<article>
 					
 				</article>
-				<p class="next-day"><label>Passer au jour suivant <button>&gt;</button></label></p>
-				<p class="fin-day"><label>Fin <button>X</button></label></p>
+				<p class="close-day text-align-center"><label><button>Allons voir</button></label></p>
+				<p class="next-day text-align-center"><label><button>Aller au jour suivant &gt;</button></label></p>
+				<p class="fin-day text-align-center"><label><button>Fin</button></label></p>
 			</div>
 			<div class="interface">
 				<div class="map">
 					<div class='overlay'></div>
+					<div class='smog'></div>
 					<div id="items"></div>
 				</div>
 				<footer>
@@ -726,10 +813,12 @@
 						<button data-etape="5">Jour 5</button>
 						<button data-etape="6">Fin</button>
 					</nav>
-					<p class="signature"><a href="http://www.lanterne.ca/" target="_blank">La Lanterne</a></p>
 				</footer>
 			</div>
 		</main>
+		<footer>
+			<p class="signature text-align-center"><a href="http://www.lanterne.ca/" target="_blank">La Lanterne</a></p>
+		</footer>
 	</body>
 
 </html>

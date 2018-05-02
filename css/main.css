@@ -19,7 +19,8 @@ html {
 	font-size: 13px;
 }
 body {
-	background-color: #cecece;
+	background: url('../img/hrognures.png') no-repeat,url('../img/brognures.png') bottom right no-repeat #fafafa;
+    padding-bottom: 25px;
 	margin:0;
 }
 
@@ -36,15 +37,14 @@ h1,h2,h3,h4,h5,h6 {
 }
 main {
 	margin: auto;
-	background: url('../img/hrognures.png') no-repeat,url('../img/brognures.png') bottom right no-repeat #fafafa;
 	padding: 30px;
 	max-width: 682px;
 	width:100%;
 	min-width:300px;
-	/*min-height: 670px;*/
 }
 
-main>header {
+main>header, 
+footer nav {
 	text-align: center;
 }
 header .sous-titre {
@@ -65,17 +65,12 @@ header hr:nth-child(2n+1) {
     border-width: 0.5px;
 }
 
-footer nav {
-	text-align:center;
-}
-
 h1 a {
 	text-decoration: none;
 	color: black;
 }
 
 .cible {
-	/*background-image: url('../img/point.png');*/
 	width: 50px;
 	height: 50px;
 	position: absolute;
@@ -117,12 +112,19 @@ h1 a {
 	padding:5px 10px;
 }
 
+.text-align-center {
+	text-align:center;
+}
 .text-align-left {
 	text-align:left;
 }
 
-nav button {
-	
+figure {
+	margin:0;
+	color:#6d6d6d;
+}
+figure img {
+	filter:sepia(100%);
 }
 
 button {
@@ -133,6 +135,7 @@ button {
     padding: 5px 10px;
 	transition-duration: 0.3s;
 	cursor: pointer;
+	font-weight:bold;
 }
 
 footer button {
@@ -165,13 +168,16 @@ a {
     background-color: #fafafa;
     height: 565px;
     position: absolute;
-	z-index: 2;
+	z-index: 3;
 	padding: 5px;
 	display: none;
 	margin-left: 422px;
 }
 
-.next-day, .fin-day, .restart {
+.next-day, 
+.fin-day, 
+.close-day, 
+.restart {
 	display:none;
 }
 
@@ -196,27 +202,52 @@ button.selected{
 	background-color: #929292;
 }
 
-.overlay {
+.overlay, .smog {
 	height:575px;
 	max-width:682px;
 	width:100%;
     position: absolute;
 	background-color: grey;
     opacity: 0.5;
-    z-index: 1;
+    z-index: 2;
 }
 
 .new-day {
 	margin-left:225px !important;
 }
 
-.signature {
-	text-align:center;
+.smog {
+	background-image: url('../img/smog.svg');
+	animation-name: roam;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	pointer-events: none;
+	
+	z-index: 1;
+	background-color:unset;
+	display:none;
 }
+
+@keyframes roam {
+	0% {
+		background-position: 0 0;
+	}
+	33% {
+		background-position: -150px -100px;
+	}
+	66% {
+		background-position: -50px -200px;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
 
 @media screen and (max-width: 760px) {
 	main {
-		padding:0;
+		padding: 0;
 	}
 }
 
@@ -230,18 +261,14 @@ button.selected{
 	}
 }
 
-
-@media screen and (max-height: 600px) {
-	.map, .overlay {
-		height: 430px;
-	}
-	.signature{
-		display:none;
-	}
-}
-
 @media screen and (max-height: 600px), screen and (max-width: 465px) {
 	.switch-etape button {
-		margin: 10px 2px;
+		margin: 4px 2px;
+	}
+	html[data-day="5"] .map {
+		background-position: top left;
+	}
+	html[data-day="5"] .cible {
+		margin-left: 295px;
 	}
 }
