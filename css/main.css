@@ -13,13 +13,12 @@
 	font-style: normal;
 }
 
-
 html {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 13px;
 }
 body {
-	background: url('../img/hrognures.png') no-repeat,url('../img/brognures.png') bottom right no-repeat #fafafa;
+	background-color: #cecece;
     padding-bottom: 25px;
 	margin:0;
 }
@@ -36,6 +35,7 @@ h1,h2,h3,h4,h5,h6 {
 	padding: 0.4em;
 }
 main {
+	background: url('../img/hrognures.png') no-repeat,url('../img/brognures.png') bottom right no-repeat #fafafa;
 	margin: auto;
 	padding: 30px;
 	max-width: 682px;
@@ -68,6 +68,39 @@ header hr:nth-child(2n+1) {
 h1 a {
 	text-decoration: none;
 	color: black;
+}
+figure {
+	margin:0;
+	color:#6d6d6d;
+}
+figure img {
+	filter:sepia(100%);
+}
+
+button {
+	box-shadow: 0 0 0 1px hsl(100, 12%, 5%), 0 0 0 3px #fafafa, 0 0 0 4px hsl(100, 12%, 5%);
+    background-color: #fafafa;
+    border-style: unset;
+    margin: 10px 5px;
+    padding: 5px 10px;
+	transition-duration: 0.3s;
+	cursor: pointer;
+	font-weight:bold;
+}
+
+footer button {
+	border-radius: 25px;
+    height: 50px;
+    width: 50px;
+	vertical-align: middle;
+}
+
+button:hover {
+    background-color: #777777;
+}
+
+a {
+	color: #777777;
 }
 
 .cible {
@@ -118,41 +151,6 @@ h1 a {
 .text-align-left {
 	text-align:left;
 }
-
-figure {
-	margin:0;
-	color:#6d6d6d;
-}
-figure img {
-	filter:sepia(100%);
-}
-
-button {
-	box-shadow: 0 0 0 1px hsl(100, 12%, 5%), 0 0 0 3px #fafafa, 0 0 0 4px hsl(100, 12%, 5%);
-    background-color: #fafafa;
-    border-style: unset;
-    margin: 10px 5px;
-    padding: 5px 10px;
-	transition-duration: 0.3s;
-	cursor: pointer;
-	font-weight:bold;
-}
-
-footer button {
-	border-radius: 25px;
-    height: 50px;
-    width: 50px;
-	vertical-align: middle;
-}
-
-button:hover {
-    background-color: #777777;
-}
-
-a {
-	color: #777777;
-}
-
 .map {
 	background-image: url('../img/carte1871.png');
 	background-position: top center;
@@ -211,11 +209,9 @@ button.selected{
     opacity: 0.5;
     z-index: 2;
 }
-
 .new-day {
 	margin-left:225px !important;
 }
-
 .smog {
 	background-image: url('../img/smog.svg');
 	animation-name: roam;
@@ -227,6 +223,9 @@ button.selected{
 	z-index: 1;
 	background-color:unset;
 	display:none;
+}
+.signature {
+	padding-bottom:25px;
 }
 
 @keyframes roam {
