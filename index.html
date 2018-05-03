@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr-CA">
+<html lang="fr">
 	<head>
 		<!-- 
 			Mettre en et es
@@ -20,7 +20,7 @@
 
 		<link type="text/css" rel="stylesheet" href="css/main.css?ver=0.0.6" media="all" />
 		
-		<title>Québec 1918 : le centenaire des émeutes contre la conscription</title>
+		<title data-tkey>Québec 1918&nbsp;: le centenaire des émeutes contre la conscription</title>
 		
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="js/jquery.touchSwipe.min.js"></script>
@@ -33,6 +33,8 @@
 			   '<use xlink:href="img/point.svg#svg8"></use>' + 
 			'</svg>';
 			var etape = -1;
+			var lang = new Lang(['fr','en','es']);
+			lang.setLang();
 			
 			var map = {
   "etapes": [
@@ -468,12 +470,12 @@
         },
         {
           "modal": {
-            "titre": "Pourquoi un tel gâchi?",
+            "titre": "Pourquoi un tel gâchis&nbsp;?",
             "image": {
 				"background-image": "url('img/winnipeg.jpg')",
 				"backgroundPosition":"center"
             },
-            "texte": "<p>Le premier ministre conservateur Borden craint l'espoir sucité par la révolution bolchévique en russie.</p><p>Quoi de mieux qu'un bain de sang pour dissuader la classe populaire de sympathiser avec l'insurrection communiste ?</p><p>D'ailleurs, dès 1919, le pays sera secoué par une des plus grande grève ouvrière de son histoire, à Winnipeg.</p>"
+            "texte": "<p>Le premier ministre conservateur Borden craint l'espoir suscité par la révolution bolchévique en russie.</p><p>Quoi de mieux qu'un bain de sang pour dissuader la classe populaire de sympathiser avec l'insurrection communiste&nbsp;?</p><p>D'ailleurs, dès 1919, le pays sera secoué par une des plus grande grève ouvrière de son histoire, à Winnipeg.</p>"
           }
         },
         {
@@ -726,6 +728,12 @@
 					});
 				});
 				
+				$("[data-lang]").click (function(e) {
+					e.preventDefault();
+					
+					lang.setLang($(this).data("lang"));
+				});
+				
 				//preload
 				$.each(map["etapes"], function (index1, value1) {
 					if ( value1["in"] != undefined) 
@@ -757,25 +765,23 @@
 			<header>
 				<h1><a href="index.html">Québec 1918</a></h1>
 				<hr>
-				<div class="sous-titre">Centenaire des émeutes contre la conscription</div>
+				<div class="sous-titre" data-tkey>Centenaire des émeutes contre la conscription</div>
 				<hr>
 				<hr>
 				<div class="start">
 					<figure>
-						<a href="#" onclick="$('main>header .start button').click();"><img src="img/scene.jpg" width="100%" alt="Affrontement"></a>
-						<figcaption><a href="http://www.wartinpantois.com">Wartin Pantois</a>, Québec 1918 : le centenaire des émeutes contre la conscription, peintures sur papier marouflé sur mur, Québec, Canada, 2018</figcaption>
+						<a href="#" onclick="$('main>header .start button').click();"><img src="img/scene.jpg" alt="Affrontement"></a>
+						<figcaption><a href='http://www.wartinpantois.com'>Wartin Pantois</a>, <span data-tkey>Québec 1918 : le centenaire des émeutes contre la conscription, peintures sur papier marouflé sur mur, Québec, Canada, 2018</span></figcaption>
 					</figure>
-					<p class="text-align-left">Ça fait 100 ans qu'a eu lieu les émeutes de la conscription à Québec. Lors de la Pâques de 1918, 
-					pendant 5 jours, la ville est à feu et à sang : la population se soulève, des journaux sont saccagés 
-					et l'armée tire sur la foule. Il s'agit d'une des plus importante crise politique québécoise.</p>
-					<p class="text-align-left">Cet épisode méconnu mérite d'être mis en lumière.</p>
+					<p class="text-align-left" data-tkey>Ça fait 100 ans qu'a eu lieu les émeutes de la conscription à Québec. Lors de la Pâques de 1918, pendant 5 jours, la ville est à feu et à sang&nbsp;: la population se soulève, des journaux sont saccagés et l'armée tire sur la foule. Il s'agit d'une des plus importante crise politique&nbsp;québécoise.</p>
+					<p class="text-align-left" data-tkey>Cet épisode méconnu mérite d'être mis en&nbsp;lumière.</p>
 
-					<p><label><button>Commencer &gt;</button></label></p>
+					<p><label><button data-tkey>Commencer &gt;</button></label></p>
 					
-					<h2 class="text-align-left">À venir</h2>
-					<p class="text-align-left">Une <a href="https://www.facebook.com/events/206381930139190/" target="_blank">visite guidée sur le thème des émeutes</a> aura lieu samedi 5 mai, 17h, à la Place D'Youville.</p>
+					<h2 class="text-align-left" data-tkey>À venir</h2>
+					<p class="text-align-left" data-tkey>Une <a href="https://www.facebook.com/events/206381930139190/" target='_blank'>visite guidée sur le thème des émeutes</a> aura lieu samedi 5 mai, 17h, à la Place D'Youville.</p>
 				</div>
-				<p class="restart"><label><button>Recommencer &lt;</button></label></p>
+				<p class="restart"><label><button data-tkey>Recommencer &lt;</button></label></p>
 			</header>
 			<div id="modal" class="interface">
 				<header>
@@ -791,9 +797,9 @@
 				<article>
 					
 				</article>
-				<p class="close-day text-align-center"><label><button>Allons voir</button></label></p>
-				<p class="next-day text-align-center"><label><button>Aller au jour suivant &gt;</button></label></p>
-				<p class="fin-day text-align-center"><label><button>Fin</button></label></p>
+				<p class="close-day text-align-center"><label><button data-tkey>Allons voir</button></label></p>
+				<p class="next-day text-align-center"><label><button data-tkey>Aller au jour suivant &gt;</button></label></p>
+				<p class="fin-day text-align-center"><label><button data-tkey>Fin</button></label></p>
 			</div>
 			<div class="interface">
 				<div class="map">
@@ -803,18 +809,19 @@
 				</div>
 				<footer>
 					<nav class="switch-etape">
-						<button data-etape="0">Intro</button>
-						<button data-etape="1">Jour 1</button>
-						<button data-etape="2">Jour 2</button>
-						<button data-etape="3">Jour 3</button>
-						<button data-etape="4">Jour 4</button>
-						<button data-etape="5">Jour 5</button>
-						<button data-etape="6">Fin</button>
+						<button data-etape="0" data-tkey>Intro</button>
+						<button data-etape="1" data-tkey>Jour 1</button>
+						<button data-etape="2" data-tkey>Jour 2</button>
+						<button data-etape="3" data-tkey>Jour 3</button>
+						<button data-etape="4" data-tkey>Jour 4</button>
+						<button data-etape="5" data-tkey>Jour 5</button>
+						<button data-etape="6" data-tkey>Fin</button>
 					</nav>
 				</footer>
 			</div>
-			<footer>
-				<p class="signature text-align-center"><a href="http://www.lanterne.ca/" target="_blank">La Lanterne</a></p>
+			<footer class="signature text-align-center">
+				<p><a href="http://www.lanterne.ca/" target="_blank">La Lanterne</a></p>
+				<p><a href="#" data-lang="en">english</a> - <a href="#" data-lang="es">español</a> - <a href="#" data-lang="fr">français</a></p>
 			</footer>
 		</main>
 	</body>

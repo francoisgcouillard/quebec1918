@@ -19,7 +19,6 @@ html {
 }
 body {
 	background-color: #cecece;
-    padding-bottom: 25px;
 	margin:0;
 }
 
@@ -77,6 +76,7 @@ figure {
 }
 figure img {
 	filter:sepia(100%);
+	width:100%;
 }
 
 button {

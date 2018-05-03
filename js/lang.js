@@ -1,9 +1,9 @@
 class Lang {
-	constructor () {
-		this.langs = ['fr', 'en', 'it'];
+	constructor (langs) {
+		this.langs = langs;
 		this.langBrowser = '';
 		this.library = {}; //every words of the good lang
-		this.langSet = '';
+		this.langSet = langs[0]; //default lang
 		
 		if (navigator.language.substr (0, 2) != undefined) {
 			this.langBrowser = navigator.language.substr (0, 2);
@@ -11,26 +11,9 @@ class Lang {
 				this.langSet = this.langBrowser;
 		}
 	};
-	loadAndSet () {
-		$.getJSON('lang/'+this.langSet+'.json', function (jsdata) {
-			this.library = jsdata;
-		
-			$("[tkey]").each (function (index) {
-				if ( $(this).attr ('tkey').length )
-					var strTr = jsdata [$(this).attr ('tkey')];
-				else {
-					var strTr = jsdata [$(this).html()];
-					$(this).attr( 'tkey', $(this).html() );
-				}
-				
-				$(this).attr("lang", $("html").attr("lang"));
-				$(this).html (strTr);
-			});
-		}.bind(this));
-	};
 	//Get a div with translated text with all infos for future translate
 	getTextContainer (str) {
-		return ( $("<div/>").attr("tkey", str).attr("lang", this.langSet).html(this.getText(str)) );
+		return ( $("<div/>").attr("data-tkey", str).attr("lang", this.langSet).html(this.getText(str)) );
 	};
 	getText(key) {
 		if (this.library[key] == undefined)
@@ -38,9 +21,31 @@ class Lang {
 		
 		return (this.library[key] == undefined ? key : this.library[key] );
 	};
+	loadAndSet () {
+		var classLang = this;
+		
+		$.getJSON('lang/'+this.langSet+'.json', function (jsdata) {
+			classLang.library = jsdata;
+			
+			$("[data-tkey]").each (function (index) {
+				if ( $(this).attr ('data-tkey').length )
+					var strTr = classLang.getText($(this).attr ('data-tkey'));
+				else {
+					var strTr = classLang.getText($(this).html());
+					$(this).attr( 'data-tkey', $(this).html() );
+				}
+				
+				$(this).attr ("lang", $("html").attr("lang"));
+				$(this).html (strTr);
+			});
+		})
+		.fail (function() {
+			console.log( "error loading " + 'lang/'+this.langSet+'.json' );
+		});
+	};
 	setLang (lang) {
 		if (lang == undefined)
-			lang = 'fr';
+			lang = this.langSet;
 		
 		//If we have a library with this language
 		if (this.langs.includes(lang)) {
@@ -50,6 +55,3 @@ class Lang {
 		}
 	};
 }
-
-var lang = new Lang();
-lang.setLang();
