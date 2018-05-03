@@ -52,17 +52,19 @@ header .sous-titre {
     font-family: Courier New;
     font-weight: bold;
 }
-
-header hr {
+hr {
     border-style: solid;
 	margin: 0.1em; 
 }
-header hr:nth-child(2n+0) {
+hr:nth-child(2n+0) {
     border-width: 2px;
 }
-header hr:nth-child(2n+1) {
+hr:nth-child(2n+1) {
     border-style: solid;
     border-width: 0.5px;
+}
+footer nav {
+	text-align:center;
 }
 
 h1 a {
@@ -179,7 +181,7 @@ a {
 	display:none;
 }
 
-.no-items {
+.items-vide {
 	visibility:hidden;
 }
 button.selected{

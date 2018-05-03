@@ -2,9 +2,7 @@
 <html lang="fr-CA">
 	<head>
 		<!-- 
-			Mettre des sons
-			
-			C quoi l'acte d'émeute?
+			Mettre en et es
 		-->
 		<meta charset="UTF-8">
 		
@@ -557,7 +555,7 @@
 				
 				$("#modal button.quit, .overlay, #modal .close-day").click (function () {
 					if ( $(".new-day").length > 0) { //Si c'est une nouvelle journée
-						if ( $(".no-items").length == 0 ) { //Si ya pas d'items
+						if ( $(".items-vide").length == 0 ) { //Si ya pas d'items
 							$("#modal").fadeOut(1000);
 							$(".overlay").fadeOut(1000, setCibles);
 						}
@@ -671,11 +669,11 @@
 						.prop("disabled",  (index == conteneur.length-1));
 						
 					//Quit button
-					$("#modal .quit").toggleClass ("no-items", (map["etapes"][etape]["items"] == undefined));
+					$("#modal .quit").toggleClass ("items-vide", (map["etapes"][etape]["items"] == undefined));
 					
 					//Boutons de fin de jours et de fin fin
-					//C la fin du jour si: la dernière page ET (!new-day OU (.new-day + .no-items))
-					var fin = ((index == conteneur.length-1) && ($(".new-day").length == 0 || ($(".new-day").length > 0 && $(".no-items").length > 0) ) );
+					//C la fin du jour si: la dernière page ET (!new-day OU (.new-day + .items-vide))
+					var fin = ((index == conteneur.length-1) && ($(".new-day").length == 0 || ($(".new-day").length > 0 && $(".items-vide").length > 0) ) );
 					//C la fin du site si: dernière page et dernier index du conteneur
 					var finfin = ((index == conteneur.length-1) && (etape == map["etapes"].length-1) );
 
@@ -782,7 +780,7 @@
 			<div id="modal" class="interface">
 				<header>
 					<nav>
-						<button class="quit no-items">X</button>
+						<button class="quit items-vide">X</button>
 						<div class="pagination pagination-text"></div>
 						<button class="prev pagination" data-page="">◄</button>
 						<button class="next pagination" data-page="">►</button>
