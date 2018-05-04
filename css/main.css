@@ -212,7 +212,8 @@ button.selected{
     z-index: 2;
 }
 .new-day {
-	margin-left:225px !important;
+	margin-left:125px !important;
+	transition: margin-left 0.5s;
 }
 .smog {
 	background-image: url('../img/smog.svg');
@@ -256,9 +257,8 @@ button.selected{
 	#modal {
 		margin-left: calc(100% - 260px);
 	}
-	
 	.new-day {
-		margin-left: calc(50% - 125px) !important;
+		margin-left: calc(50% - 225px) !important;
 	}
 }
 
@@ -271,5 +271,8 @@ button.selected{
 	}
 	html[data-day="5"] .cible {
 		margin-left: 295px;
+	}
+	.new-day {
+		margin-left: calc(50% - 125px) !important;
 	}
 }
